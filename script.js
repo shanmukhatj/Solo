@@ -11,7 +11,7 @@ function loadStorage() {
     console.warn('Failed to parse storage, resetting.', error);
     return {};
   }
-}
+} 
 
 function saveStorage(data) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
