@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solo Leveling Workout Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="panel panel-stats">
+      <div class="panel-header"><span>PLAYER STATS</span></div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-label">REP EXP</span>
+          <span class="stat-value" id="repExp">0</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">MILE EXP</span>
+          <span class="stat-value" id="mileExp">0</span>
+        </div>
+        <div class="stat-card stat-total">
+          <span class="stat-label">TOTAL EXP</span>
+          <span class="stat-value" id="totalExp">0</span>
+        </div>
+      </div>
+      <div class="panel-note">Rep = 1 EXP | Mile = 100 EXP</div>
+    </section>
+
+    <section class="workout-section">
+      <h2 class="section-title">[ PUSHUP TRAINING ]</h2>
+      <div class="workout-card" data-exercise="pushups">
+        <div class="workout-meta">
+          <span class="workout-name">Pushups</span>
+          <div class="workout-totals">
+            <span>Today: <strong id="pushups-today">0</strong></span>
+            <span>All-time: <strong id="pushups-alltime">0</strong></span>
+          </div>
+        </div>
+        <div class="workout-controls">
+          <input type="number" min="0" step="1" id="pushups-input" placeholder="Reps" />
+          <div class="quick-buttons">
+            <button class="action-btn" data-action="pushups" data-value="1">+1</button>
+            <button class="action-btn" data-action="pushups" data-value="5">+5</button>
+            <button class="action-btn" data-action="pushups" data-value="10">+10</button>
+          </div>
+          <button class="log-btn" data-exercise="pushups">Add</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="workout-section">
+      <h2 class="section-title">[ SITUP TRAINING ]</h2>
+      <div class="workout-card" data-exercise="situps">
+        <div class="workout-meta">
+          <span class="workout-name">Situps</span>
+          <div class="workout-totals">
+            <span>Today: <strong id="situps-today">0</strong></span>
+            <span>All-time: <strong id="situps-alltime">0</strong></span>
+          </div>
+        </div>
+        <div class="workout-controls">
+          <input type="number" min="0" step="1" id="situps-input" placeholder="Reps" />
+          <div class="quick-buttons">
+            <button class="action-btn" data-action="situps" data-value="1">+1</button>
+            <button class="action-btn" data-action="situps" data-value="5">+5</button>
+            <button class="action-btn" data-action="situps" data-value="10">+10</button>
+          </div>
+          <button class="log-btn" data-exercise="situps">Add</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="workout-section">
+      <h2 class="section-title">[ SQUAT TRAINING ]</h2>
+      <div class="workout-card" data-exercise="squats">
+        <div class="workout-meta">
+          <span class="workout-name">Squats</span>
+          <div class="workout-totals">
+            <span>Today: <strong id="squats-today">0</strong></span>
+            <span>All-time: <strong id="squats-alltime">0</strong></span>
+          </div>
+        </div>
+        <div class="workout-controls">
+          <input type="number" min="0" step="1" id="squats-input" placeholder="Reps" />
+          <div class="quick-buttons">
+            <button class="action-btn" data-action="squats" data-value="1">+1</button>
+            <button class="action-btn" data-action="squats" data-value="5">+5</button>
+            <button class="action-btn" data-action="squats" data-value="10">+10</button>
+          </div>
+          <button class="log-btn" data-exercise="squats">Add</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="workout-section">
+      <h2 class="section-title">[ RUNNING LOG ]</h2>
+      <div class="workout-card workout-card-running" data-exercise="running">
+        <div class="workout-meta">
+          <span class="workout-name">Running</span>
+          <div class="workout-totals">
+            <span>Today: <strong id="running-today">0.00</strong> mi</span>
+            <span>All-time: <strong id="running-alltime">0.00</strong> mi</span>
+          </div>
+        </div>
+        <div class="workout-controls">
+          <input type="number" min="0" step="0.1" id="running-input" placeholder="Miles" />
+          <div class="quick-buttons">
+            <button class="action-btn" data-action="running" data-value="0.5">+0.5</button>
+            <button class="action-btn" data-action="running" data-value="1">+1</button>
+            <button class="action-btn" data-action="running" data-value="2">+2</button>
+          </div>
+          <button class="log-btn" data-exercise="running">Add</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel-log">
+      <div class="panel-header"><span>TODAY'S LOG</span></div>
+      <div class="log-list" id="logList"></div>
+      <button class="reset-btn" id="resetToday">RESET TODAY</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
